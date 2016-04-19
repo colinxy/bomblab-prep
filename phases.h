@@ -1,4 +1,5 @@
 
 void initialize_bomb();
-void phase_1(const char *str);
-void phase_2(const char *str);
+void blow();
+int phase_1(const char *str);
+int phase_2(const char *str);

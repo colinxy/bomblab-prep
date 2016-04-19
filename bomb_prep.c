@@ -6,9 +6,6 @@
 #include "phases.h"
 
 
-char input[100];
-
-
 int main() {
 
     printf("Welcome to my fiendish little bomb. Not really...\n"
@@ -16,23 +13,41 @@ int main() {
            "Proudly brought to you by Colin Yang.\n");
 
     printf("\nNote: since this is not the actual lab,\n"
-           "it is not tamper proof. You MUST NOT enter\n"
-           "more than 100 characters for each phase!!!\n");
+           "it is not tamper proof.\n\n");
 
     initialize_bomb();
-
+    size_t size = 0;
+    char *input = NULL;
 
     /* phase 1 */
-    int size;
+    printf("secret phrase: ");
+    getline(&input, &size, stdin); /* possible memory leak */
+    if (phase_1(input))
+        printf("Phase 1 defused. How about the next one?\n");
+    else {
+        blow();
+        printf("It's okay to fail. Try another one.\n");
+    }
 
-    printf("Phase 1 defused. How about the next one?\n");
+    free(input);
+    size = 0;
+    input = NULL;
 
     /* phase 2 */
-    printf("Phase 2 defused. Congrats!\n");
+    printf("secret phrase: ");
+    getline(&input, &size, stdin); /* possible memory leak */
+    if (phase_2(input))
+        printf("Phase 2 defused. Congrats!\n");
+    else {
+        blow();
+        printf("It's okay to fail\n");
+    }
+
+    free(input);
+
     printf("That is the end of practice. Hopefully you are better\n"
            "prepared for the actual lab.\n"
            "Gook Luck. :-)\n");
-
 
     return 0;
 }
