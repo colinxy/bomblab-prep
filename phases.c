@@ -5,8 +5,8 @@
 #include <time.h>
 
 
-static const unsigned int STR_LENGTH = 10;
-static const unsigned int NUM_SIZE = 6;
+#define STR_LENGTH 10
+#define NUM_SIZE 6
 
 static char secret_str[STR_LENGTH + 1];
 static int secret_ints[NUM_SIZE];
@@ -14,15 +14,16 @@ static int secret_ints[NUM_SIZE];
 
 void initialize_bomb() {
     srand(0);                   /* deterministic random number */
+    size_t i;
 
     /* random string */
-    for (size_t i = 0; i < STR_LENGTH; i++) {
+    for (i = 0; i < STR_LENGTH; i++) {
         secret_str[i] = rand() % 26 + 97; /* a-z */
     }
     secret_str[STR_LENGTH] = '\0';
 
     /* random numbers */
-    for (size_t i = 0; i < NUM_SIZE; i++) {
+    for (i = 0; i < NUM_SIZE; i++) {
         secret_ints[i] = rand() % 1000;
     }
 }
@@ -30,7 +31,8 @@ void initialize_bomb() {
 /*
 void inspect() {
     printf("%s\n", secret_str);
-    for (size_t i = 0; i < NUM_SIZE; i++)
+    size_t i;
+    for (i = 0; i < NUM_SIZE; i++)
         printf("%d ", secret_ints[i]);
     printf("\n");
 }
@@ -39,9 +41,8 @@ void inspect() {
 void explode_bomb() {
     /* inspect(); */
 
-    printf("BOOM!!! The bomb has blown up.\n");
-
-    printf("Your instructor has been notified. Just Kidding...\n");
+    puts("BOOM!!! The bomb has blown up.\n");
+    puts("Your instructor has been notified. Just Kidding...\n");
 }
 
 
@@ -67,7 +68,8 @@ int phase_2(const char *str) {
         return 0;
     }
 
-    for (size_t i = 0; i < NUM_SIZE; i++)
+    size_t i;
+    for (i = 0; i < NUM_SIZE; i++)
         if (inputs[i] != secret_ints[i]) {
             explode_bomb();
             return 0;
