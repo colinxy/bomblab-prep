@@ -1,0 +1,25 @@
+#+TITLE: Bomblab Preparation
+
+
+* Intro
+
+This project aims to duplicate the behavior the actual bomblab.
+It serves as a simplified version of bomblab. Just as the actual
+bomblab, you get a program with several phases of bombs, and you
+have to type the correct string to defuse the bomb.
+
+But unlike the actual bomblab, you can try as many times as you want,
+and there is no consequence of exploding the bomb.
+
+The goal of this program is to give you a easier program
+to start with, without the fear of losing points on your
+actual lab.
+
+
+* Running the program
+
+All code are expected to run in command line under a *nix system.
+
+First create the bomb with =make=, and you will find an executable
+with the name =bomb_prep=. Then practice defusing the bomb with
+=gdb bomb_prep=.
