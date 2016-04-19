@@ -19,12 +19,16 @@ int main() {
     size_t size = 0;
     char *input = NULL;
 
+    /* inspect(); */
+
     /* phase 1 */
     printf("secret phrase: ");
-    getline(&input, &size, stdin); /* possible memory leak */
-    if (phase_1(input))
+    ssize_t chars = getline(&input, &size, stdin); /* possible memory leak */
+    if (input[chars-1] == '\n')
+        input[chars-1] = '\0';
+    if (phase_1(input)) {
         printf("Phase 1 defused. How about the next one?\n");
-    else {
+    } else {
         blow();
         printf("It's okay to fail. Try another one.\n");
     }
@@ -34,18 +38,18 @@ int main() {
     input = NULL;
 
     /* phase 2 */
-    printf("secret phrase: ");
+    printf("\nsecret phrase: ");
     getline(&input, &size, stdin); /* possible memory leak */
-    if (phase_2(input))
+    if (phase_2(input)) {
         printf("Phase 2 defused. Congrats!\n");
-    else {
+    } else {
         blow();
-        printf("It's okay to fail\n");
+        printf("It's okay to fail.\n");
     }
 
     free(input);
 
-    printf("That is the end of practice. Hopefully you are better\n"
+    printf("\nThat is the end of practice. Hopefully you are better\n"
            "prepared for the actual lab.\n"
            "Gook Luck. :-)\n");
 

@@ -37,7 +37,7 @@ void inspect() {
 
 
 void blow() {
-    inspect();
+    /* inspect(); */
 
     printf("BOOM!!! The bomb has blown up.\n");
 
