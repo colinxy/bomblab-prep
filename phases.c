@@ -36,7 +36,7 @@ void inspect() {
 }
 
 
-void blow() {
+void explode_bomb() {
     /* inspect(); */
 
     printf("BOOM!!! The bomb has blown up.\n");
@@ -47,7 +47,12 @@ void blow() {
 
 /* return val: 0 means fail, 1 means success */
 int phase_1(const char *str) {
-    return strcmp(secret_str, str) == 0;
+    int result = strcmp(secret_str, str) == 0;
+
+    if (!result)
+        explode_bomb();
+
+    return result;
 }
 
 
@@ -57,12 +62,16 @@ int phase_2(const char *str) {
     int count = sscanf(str, "%d %d %d %d %d %d", inputs, inputs+1,
                        inputs+2, inputs+3, inputs+4, inputs+5);
 
-    if (count != 6)
+    if (count != 6) {
+        explode_bomb();
         return 0;
+    }
 
     for (size_t i = 0; i < NUM_SIZE; i++)
-        if (inputs[i] != secret_ints[i])
+        if (inputs[i] != secret_ints[i]) {
+            explode_bomb();
             return 0;
+        }
 
     return 1;
 }

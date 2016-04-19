@@ -29,7 +29,6 @@ int main() {
     if (phase_1(input)) {
         printf("Phase 1 defused. How about the next one?\n");
     } else {
-        blow();
         printf("It's okay to fail. Try another one.\n");
     }
 
@@ -43,7 +42,6 @@ int main() {
     if (phase_2(input)) {
         printf("Phase 2 defused. Congrats!\n");
     } else {
-        blow();
         printf("It's okay to fail.\n");
     }
 
