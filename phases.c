@@ -13,7 +13,7 @@ static int secret_ints[NUM_SIZE];
 
 
 void initialize_bomb() {
-    srand(time(NULL));
+    srand(0);                   /* deterministic random number */
 
     /* random string */
     for (size_t i = 0; i < STR_LENGTH; i++) {
@@ -27,14 +27,14 @@ void initialize_bomb() {
     }
 }
 
-
+/*
 void inspect() {
     printf("%s\n", secret_str);
     for (size_t i = 0; i < NUM_SIZE; i++)
         printf("%d ", secret_ints[i]);
     printf("\n");
 }
-
+*/
 
 void explode_bomb() {
     /* inspect(); */

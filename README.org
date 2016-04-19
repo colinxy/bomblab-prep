@@ -20,6 +20,23 @@ actual lab.
 
 All code are expected to run in command line under a *nix system.
 
-First create the bomb with =make=, and you will find an executable
+First create the bomb with =./build.sh=, and you will find an executable
 with the name =bomb_prep=. Then practice defusing the bomb with
 =gdb bomb_prep=.
+
+
+* Some tips that might be helpful for the lab
+
+ - when you first enter the debugger, try command =info functions=
+   to see all the functions of the program.
+ - set a break point at each of the phases.
+ - set a breakpoint at function =explode_bomb=, which is quite likely
+   the spot where they try to inform the instructor.
+ - to see the next instruction to be executed, set the following options
+   - =set disassemble-next-line on=
+   - =show disassemble-next-line=
+ - it is better to step through code per instruction.
+   - =ni= or =nexti= for next instruction
+     - do not step into function if the instruction is =call=
+   - =si= or =stepi= for step instruction
+     - step into function if the instruction is =call=
