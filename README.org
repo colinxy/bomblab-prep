@@ -6,7 +6,7 @@
 This project aims to duplicate the behavior the actual bomblab.
 It serves as a simplified version of bomblab. Just as the actual
 bomblab, you get a program with several phases of bombs, and you
-have to type the correct string to defuse the bomb.
+have to type the correct string (secret phrase) to defuse the bomb.
 
 But unlike the actual bomblab, you can try as many times as you want,
 and there is no consequence of exploding the bomb.
@@ -18,12 +18,20 @@ actual lab.
 
 * Running the program
 
-All code are expected to run in command line under a *nix system.
+This project is expected to run in command line under a *nix system.
 
 First create the bomb with =./build.sh=, and you will find an executable
 with the name =bomb_prep=.
 Then practice defusing the bomb with
 =gdb bomb_prep=.
+
+It is strongly advised not to look at the source code before
+trying out the bomb!!! Once the logic of the program becomes clear to
+you, debugging the assembly will be like cheating. You have to train
+yourself to debug without any source code.
+
+NOTE: you might get *different* results under *different* machines.
+This is an expected behavior, not a bug.
 
 
 * Some tips that might be helpful for the lab
@@ -33,7 +41,8 @@ Then practice defusing the bomb with
    to see all the functions of the program.
  - set a break point at each of the phases.
  - set a breakpoint at function =explode_bomb=, which is quite likely
-   the spot where they try to inform the instructor.
+   the spot where the fiendish little bomb tries to make
+   contact with your instructor.
  - to see the next instruction to be executed, set the following options
    - =set disassemble-next-line on=
    - =show disassemble-next-line=
