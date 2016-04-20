@@ -41,8 +41,8 @@ void inspect() {
 void explode_bomb() {
     /* inspect(); */
 
-    puts("BOOM!!! The bomb has blown up.\n");
-    puts("Your instructor has been notified. Just Kidding...\n");
+    puts("BOOM!!! The bomb has blown up.");
+    puts("Your instructor has been notified. Just Kidding...");
 }
 
 

@@ -21,13 +21,14 @@ actual lab.
 All code are expected to run in command line under a *nix system.
 
 First create the bomb with =./build.sh=, and you will find an executable
-with the name =bomb_prep=. Then practice defusing the bomb with
+with the name =bomb_prep=.
+Then practice defusing the bomb with
 =gdb bomb_prep=.
 
 
 * Some tips that might be helpful for the lab
 
- - _read the bomblab handout carefully_
+ - *read the bomblab handout carefully*
  - when you first enter the debugger, try command =info functions=
    to see all the functions of the program.
  - set a break point at each of the phases.
