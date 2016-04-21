@@ -35,6 +35,11 @@ with =cb=, short for 'continue bomb'.
 You can use the 2 source file within gdb by typing the command
 =source gdb_prompt.py= and =source kill_bomb.py= within gdb.
 
+Here is a screenshot:
+
+#+ATTR_HTML: :width 500px
+[[screenshot.png]]
+
 
 * Running the program
 
