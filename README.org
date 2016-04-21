@@ -18,7 +18,7 @@ actual lab.
 
 * Update
 
-There is some exciting announcements to be made.
+There are some exciting announcements to be made.
 With the newly added 2 python programs, you can now
 extend gdb's functionality.
 
