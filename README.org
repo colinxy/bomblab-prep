@@ -16,6 +16,26 @@ to start with, without the fear of losing points on your
 actual lab.
 
 
+* Update
+
+There is some exciting announcements to be made.
+With the newly added 2 python programs, you can now
+extend gdb's functionality.
+
+=gdb_prompt.py= is used to improve gdb's prompt by
+replacing the dumb =(gdb)= prompt with a informative prompt
+=(function name)=.
+
+=kill_bomb.py= is used to give you a heads-up when you are trying
+to type =continue= with function =explode_bomb=. It will print
+out a warning message and ask you if you want to kill the program.
+However, you will have to invoke this customized version of =continue=
+with =cb=, short for 'continue bomb'.
+
+You can use the 2 source file within gdb by typing the command
+=source gdb_prompt.py= and =source kill_bomb.py= within gdb.
+
+
 * Running the program
 
 This project is expected to run in command line under a *nix system.
