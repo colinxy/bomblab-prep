@@ -9,11 +9,11 @@
 int main() {
 
     puts("Welcome to my fiendish little bomb. Not really...\n"
-         "It's only a prep to get you really for the actual bomb lab.\n"
+         "It's only a prep to get you ready for the actual bomb lab.\n"
          "Proudly brought to you by Colin Yang.\n");
 
     puts("Note: since this is not the actual lab,\n"
-         "it is not tamper proof.\n");
+         "it is not tamper-proof.\n");
 
     initialize_bomb();
     size_t size = 0;

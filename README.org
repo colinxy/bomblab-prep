@@ -38,12 +38,13 @@ This is an expected behavior, not a bug.
 
  - *read the bomblab handout carefully*
  - when you first enter the debugger, try command =info functions=
-   to see all the functions of the program.
+   to see all functions of the program.
  - set a break point at each of the phases.
  - set a breakpoint at function =explode_bomb=, which is quite likely
    the spot where the fiendish little bomb tries to make
-   contact with your instructor.
+   contact with your instructor about your unsuccessful attempt.
  - to see the next instruction to be executed, set the following options
+   in gdb
    - =set disassemble-next-line on=
    - =show disassemble-next-line=
  - it is better to step through code per instruction.
