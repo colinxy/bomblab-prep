@@ -23,11 +23,13 @@ class ContinueBomb(gdb.Command):
     def invoke(self, arg, from_tty):
         try:
             if gdb.selected_frame().name() == "explode_bomb":
-                print("*********************************\n"
+                print("\033[0;31m"
+                      "*********************************\n"
                       "*                               *\n"
                       "* You have entered explode_bomb *\n"
                       "*                               *\n"
-                      "*********************************\n")
+                      "*********************************"
+                      "\033[0m\n")
                 gdb.execute("kill")
             else:
                 gdb.execute("continue")

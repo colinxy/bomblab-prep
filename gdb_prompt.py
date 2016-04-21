@@ -33,9 +33,13 @@ class ExtendedPrompt(gdb.Parameter):
 
     def before_prompt_hook(self, current):
         try:
-            self.prompt = gdb.selected_frame().name().\
+            frame_name = gdb.selected_frame().name().\
                 encode("ascii", "replace")
-            self.prompt = '(' + self.prompt + ') > '
+
+            if "bomb" in frame_name or "explode" in frame_name \
+                    or "submit" in frame_name:
+                frame_name = "\033[0;31m" + frame_name + "\033[0m"
+            self.prompt = '(' + frame_name + ') > '
             return self.prompt
         except gdb.error:
             self.prompt = None
