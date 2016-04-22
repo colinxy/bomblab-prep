@@ -37,8 +37,11 @@ class ExtendedPrompt(gdb.Parameter):
                 encode("ascii", "replace")
 
             if "bomb" in frame_name or "explode" in frame_name \
-                    or "submit" in frame_name:
+                    or "submit" in frame_name:  # red prompt
                 frame_name = "\033[0;31m" + frame_name + "\033[0m"
+            elif "phase" in frame_name:  # green prompt
+                frame_name = "\033[0;32m" + frame_name + "\033[0m"
+
             self.prompt = '(' + frame_name + ') > '
             return self.prompt
         except gdb.error:
