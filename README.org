@@ -24,15 +24,18 @@ extend gdb's functionality.
 
 =gdb_prompt.py= is used to improve gdb's prompt by
 replacing the dumb =(gdb)= prompt with a informative prompt
-=(function name)=.
+=(function name)= and show it in various colors.
+If you are in a particular phase,
+the prompt will show function name in green, while if you are
+in =explode_bomb=, the prompt will show it in red.
 
 =kill_bomb.py= is used to give you a heads-up when you are trying
-to type =continue= with function =explode_bomb=. It will print
+to use =continue= command inside function =explode_bomb=. It will print
 out a warning message and ask you if you want to kill the program.
 However, you will have to invoke this customized version of =continue=
 with =cb=, short for 'continue bomb'.
 
-You can use the 2 source file within gdb by typing the command
+You can use the above features within gdb by typing the command
 =source gdb_prompt.py= and =source kill_bomb.py= within gdb.
 
 Here is a screenshot:

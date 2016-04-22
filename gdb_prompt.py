@@ -41,6 +41,8 @@ class ExtendedPrompt(gdb.Parameter):
                 frame_name = "\033[0;31m" + frame_name + "\033[0m"
             elif "phase" in frame_name:  # green prompt
                 frame_name = "\033[0;32m" + frame_name + "\033[0m"
+            else:               # yellow prompt
+                frame_name = "\033[0;33m" + frame_name + "\033[0m"
 
             self.prompt = '(' + frame_name + ') > '
             return self.prompt
