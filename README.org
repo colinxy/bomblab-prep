@@ -18,8 +18,12 @@ actual lab.
 
 * Update
 
-*NOTE*: the following python gdb patch can only be run on the
-latest version of gdb. To use the newest version of gdb on
+*NOTE*: the following gdb plugin can only be run on the
+latest version of gdb. It is tested on =gdb 7.9=,
+configured as =x86_64-unknown-linux-gnu=
+and =gdb 7.11=, configured as =x86_64-apple-darwin14.5.0=.
+
+To use the newest version of gdb on
 SEASNET Linux Server, prepend path =/usr/local/cs/bin= to your
 shell environment variable =PATH= with the following code
 
@@ -30,6 +34,8 @@ shell environment variable =PATH= with the following code
 #+END_SRC
 
 or invoke gdb with absolute path =/usr/local/cs/bin/gdb=.
+
+** gdb plugin
 
 There are some exciting announcements to be made.
 With the newly added 2 python programs, you can now
@@ -49,13 +55,15 @@ out a warning message and ask you if you want to kill the program.
 However, you will have to invoke this customized version of =continue=
 with =cb=, short for 'continue bomb'.
 
+*** Usage
+
 You can use the above features within gdb by typing the command
 =source gdb_prompt.py= and =source kill_bomb.py= within gdb.
 
 Here is a screenshot:
 
 #+ATTR_HTML: :width 500px
-[[screenshot.png]]
+[[./screenshot.png]]
 
 
 * Running the program
