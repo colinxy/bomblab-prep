@@ -18,13 +18,27 @@ actual lab.
 
 * Update
 
+*NOTE*: the following python gdb patch can only be run on the
+latest version of gdb. To use the newest version of gdb on
+SEASNET Linux Server, prepend path =/usr/local/cs/bin= to your
+shell environment variable =PATH= with the following code
+
+#+BEGIN_SRC sh
+
+  PATH=/usr/local/cs/bin:$PATH
+
+#+END_SRC
+
+or invoke gdb with absolute path =/usr/local/cs/bin/gdb=.
+
 There are some exciting announcements to be made.
 With the newly added 2 python programs, you can now
 extend gdb's functionality.
 
 =gdb_prompt.py= is used to improve gdb's prompt by
 replacing the dumb =(gdb)= prompt with a informative prompt
-=(function name)= and show it in various colors.
+=(function name)= and show it in various colors. (An ANSI terminal
+is required in order to see the color)
 If you are in a particular phase,
 the prompt will show function name in green, while if you are
 in =explode_bomb=, the prompt will show it in red.

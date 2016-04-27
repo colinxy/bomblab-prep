@@ -1,3 +1,5 @@
 bomb_prep
 *.dSYM/
 *.txt
+bomb_prep.png
+.gdb_history

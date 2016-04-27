@@ -10,7 +10,7 @@ class ExtendedPrompt(gdb.Parameter):
     """
     # Add the prompt library's dynamically generated help to the
     # __doc__ string.
-    __doc__ = __doc__ + gdb.prompt.prompt_help()
+    # __doc__ = __doc__ + gdb.prompt.prompt_help()
 
     set_doc = "Set the extended prompt."
     show_doc = "Show the extended prompt."
